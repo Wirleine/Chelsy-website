@@ -221,12 +221,14 @@ body:not(.dark-mode) .contact-form textarea {
 
 /* Footer */
 footer {
-  background-color: var(--bg-darker);
-  color: var(--text-muted);
+  background-color: var(--bg-color);
+  color: var(--text-color);
   text-align: center;
   padding: 1rem 2rem;
   font-size: 0.9rem;
   border-top: 1px solid var(--border);
+  transition: background-color 0.4s, color 0.4s;
+
 }
 
 /* Responsive */
@@ -253,4 +255,9 @@ body.dark-mode {
   --bg-color: #111111;
   --text-color: #ffffff;
   --accent-color: #66ccff;
+
+  /* Ajout pour footer */
+  --bg-darker: #1a1a1a;
+  --text-muted: #999999;
 }
+
