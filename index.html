@@ -7,6 +7,7 @@
 <link rel="stylesheet" href="style.css" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
+
 <body>
 <header>
   <nav class="nav-container">
@@ -18,6 +19,8 @@
       <li><a href="projets.html">Projets</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
+    <!-- Bouton Dark/Light Mode -->
+    <button id="theme-toggle" aria-label="Changer de thème">🌓</button>
   </nav>
 </header>
 
@@ -42,5 +45,26 @@
 <footer>
   <p>© 2025 Chelsy — En route vers l'emploi</p>
 </footer>
+
+<script>
+  const toggleButton = document.getElementById('theme-toggle');
+  const body = document.body;
+
+  // Appliquer le thème sauvegardé
+  if (localStorage.getItem('theme') === 'dark') {
+    body.classList.add('dark-mode');
+  }
+
+  toggleButton.addEventListener('click', () => {
+    body.classList.toggle('dark-mode');
+
+    // Sauvegarder la préférence
+    if (body.classList.contains('dark-mode')) {
+      localStorage.setItem('theme', 'dark');
+    } else {
+      localStorage.setItem('theme', 'light');
+    }
+  });
+</script>
 </body>
 </html>
