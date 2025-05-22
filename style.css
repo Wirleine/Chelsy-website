@@ -2,12 +2,21 @@
 :root {
   --bg-dark: #0f1117;
   --bg-darker: #0a0c12;
-  --text-light: #e0e0e0;
-  --text-muted: #b0b0b0;
+  --text-light: #e0e0e0; /* clair (mode sombre) */
+  --text-muted: #b0b0b0; /* gris clair (mode sombre) */
   --primary: #00b4ff;
   --accent: #0088cc;
   --border: #222;
   --shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+  --bg-color: #ffffff;
+  --text-color: #111111; /* sombre (mode clair) */
+  --accent-color: #3f8cff;
+}
+
+/* Mode clair : on inverse les couleurs claires/mutées */
+body:not(.dark-mode) {
+  --text-light: #111111; /* texte principal sombre */
+  --text-muted: #555555; /* texte secondaire gris foncé */
 }
 
 /* Reset de base */
@@ -19,45 +28,25 @@
 
 body {
   font-family: 'Segoe UI', Tahoma, sans-serif;
-  background-color: var(--bg-dark);
-  color: var(--text-light);
+  background-color: var(--bg-color);
+  color: var(--text-color);
   line-height: 1.6;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  transition: background-color 0.4s, color 0.4s;
 }
 
-/* Liens */
-a {
-  color: var(--primary);
-  text-decoration: none;
-  transition: 0.3s;
+/* Liens du menu : couleur fixe, ne change jamais */
+.nav-links a {
+  color: #00b4ff !important; /* couleur primaire fixe */
+  padding-bottom: 2px;
+  border-bottom: 2px solid transparent;
 }
 
-a:hover {
-  color: var(--accent);
-  text-decoration: underline;
-}
-
-/* Navigation */
-header {
-  background-color: var(--bg-darker);
-  box-shadow: var(--shadow);
-  padding: 1rem 2rem;
-}
-
-.nav-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1200px;
-  margin: auto;
-}
-
-.logo {
-  font-size: 1.8rem;
-  font-weight: bold;
-  color: var(--primary);
+.nav-links a:hover,
+.nav-links a.active {
+  border-color: var(--primary);
 }
 
 .nav-links {
@@ -66,15 +55,51 @@ header {
   gap: 1.2rem;
 }
 
-.nav-links a {
-  color: var(--text-light);
-  padding-bottom: 2px;
-  border-bottom: 2px solid transparent;
+/* Navigation */
+.nav-container {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: auto;
+  padding: 1rem 2rem;
+  background-color: var(--bg-darker);
+  box-shadow: var(--shadow);
 }
 
-.nav-links a:hover,
-.nav-links a.active {
-  border-color: var(--primary);
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--primary);
+}
+
+/* Bouton toggle thème dans nav */
+#theme-toggle {
+  margin-left: auto;
+  background-color: var(--primary);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  color: var(--bg-color);
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+}
+
+#theme-toggle:hover {
+  background-color: var(--accent);
+}
+
+body.dark-mode #theme-toggle {
+  background-color: var(--accent-color);
+  color: var(--bg-color);
+  box-shadow: 0 0 10px var(--accent-color);
 }
 
 /* Contenu principal */
@@ -110,6 +135,7 @@ h3 {
   margin-top: 1.5rem;
 }
 
+/* Texte principal */
 p {
   margin-bottom: 1rem;
   color: var(--text-light);
@@ -124,6 +150,28 @@ ul {
 ul li {
   margin-bottom: 0.5rem;
   color: var(--text-muted);
+}
+
+/* Champs formulaire : fond et texte qui s’adaptent au mode */
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  background-color: var(--bg-darker);
+  border: 1px solid var(--border);
+  color: var(--text-light);
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  border-radius: 4px;
+  resize: vertical;
+  transition: background-color 0.4s, color 0.4s;
+}
+
+/* Mode clair: modifier les inputs pour qu’ils soient clairs avec texte sombre */
+body:not(.dark-mode) .contact-form input,
+body:not(.dark-mode) .contact-form textarea {
+  background-color: #f9f9f9;
+  color: #111111;
+  border: 1px solid #ccc;
 }
 
 /* Boutons */
@@ -154,22 +202,11 @@ ul li {
   margin-top: 1rem;
 }
 
-.contact-form input,
-.contact-form textarea {
-  width: 100%;
-  background-color: var(--bg-darker);
-  border: 1px solid var(--border);
-  color: var(--text-light);
-  padding: 0.8rem;
-  margin-bottom: 1rem;
-  border-radius: 4px;
-  resize: vertical;
-}
-
 .contact-form label {
   font-weight: bold;
   margin-bottom: 0.5rem;
   display: inline-block;
+  color: var(--text-light);
 }
 
 /* Section infos contact */
@@ -209,4 +246,11 @@ footer {
     padding: 0.5rem 0;
     border: none;
   }
+}
+
+/* Mode sombre */
+body.dark-mode {
+  --bg-color: #111111;
+  --text-color: #ffffff;
+  --accent-color: #66ccff;
 }
