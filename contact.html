@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Chelsy - Contact</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+  <header>
+    <nav class="nav-container">
+      <div class="logo">Mission : Intégrer votre équipe</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="cv.html">CV & Compétences</a></li>
+        <li><a href="experiences.html">Expériences</a></li>
+        <li><a href="projets.html">Projets</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="main-container">
+    <h1>Contactez-moi</h1>
+
+    <section class="contact-form-section">
+      <form action="https://formsubmit.co/chelsyfrance1@gmail.com" method="POST" class="contact-form">
+        <!-- Empêche le captcha -->
+        <input type="hidden" name="_captcha" value="false">
+        <!-- Redirection après soumission -->
+        <input type="hidden" name="_next" value="merci.html">
+
+        <label for="nom">Nom *</label>
+        <input type="text" id="nom" name="nom" required />
+
+        <label for="email">Email *</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="message">Message *</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+
+        <button type="submit" class="btn-submit">📤 Envoyer</button>
+      </form>
+    </section>
+
+    <section class="contact-info">
+      <p><i class="fa-solid fa-envelope"></i> <a href="mailto:chelsyfrance1@gmail.com">chelsyfrance1@gmail.com</a></p>
+      <p><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/chelsywirleine/" target="_blank">linkedin.com/in/chelsywirleine</a></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Chelsy — En route vers l'emploi</p>
+  </footer>
+</body>
+</html>
