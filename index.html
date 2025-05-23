@@ -1,14 +1,54 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+
+<script>
+  (function () {
+    const theme = localStorage.getItem("theme");
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const useDark = theme === "dark" || (!theme && prefersDark);
+
+    if (useDark) {
+      document.documentElement.classList.add("dark-mode");
+    }
+
+    // Pas de visibility: hidden → on évite les flashs
+    document.documentElement.classList.add("theme-loaded");
+  })();
+</script>
+
+<style>
+  html:not(.theme-loaded) {
+    background: #0f1117; /* couleur sombre pour éviter flash blanc si dark */
+    color: white;
+  }
+</style>
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    document.body.classList.add('loaded');
+  });
+</script>
+
+
+
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Chelsy - Ingénieure Réseaux & Cybersécurité</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 
 <body>
+
+<div id="tsparticles"></div>
+
 <header>
   <nav class="nav-container">
     <div class="logo">Mission : Intégrer votre équipe</div>
@@ -19,13 +59,17 @@
       <li><a href="projets.html">Projets</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
-    <!-- Bouton Dark/Light Mode -->
-    <button id="theme-toggle" aria-label="Changer de thème">🌓</button>
+    <div id="theme-toggle" class="theme-toggle">
+      <p id="toggle-text">Turn on dark mode</p>
+        <svg id="theme-icon" class="theme-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"></svg>
+    </div>
   </nav>
 </header>
 
 <main class="main-container">
   <section class="intro">
+    <img src="assets/photo.jpg" alt="Photo de Chelsy" class="photo-profil" />
+
     <h1>Chelsy Wirleine MENTOU TAKONG</h1>
     <h2>Ingénieure Réseaux, Systèmes & Cybersécurité</h2>
     <p>Passionnée par la sécurisation des infrastructures IT et la modernisation des systèmes d'information.</p>
@@ -46,25 +90,13 @@
   <p>© 2025 Chelsy — En route vers l'emploi</p>
 </footer>
 
-<script>
-  const toggleButton = document.getElementById('theme-toggle');
-  const body = document.body;
 
-  // Appliquer le thème sauvegardé
-  if (localStorage.getItem('theme') === 'dark') {
-    body.classList.add('dark-mode');
-  }
 
-  toggleButton.addEventListener('click', () => {
-    body.classList.toggle('dark-mode');
+<!-- Librairie tsParticles (à charger AVANT ton script) -->
+<script src="https://cdn.jsdelivr.net/npm/tsparticles@2.11.1/tsparticles.bundle.min.js"></script>
 
-    // Sauvegarder la préférence
-    if (body.classList.contains('dark-mode')) {
-      localStorage.setItem('theme', 'dark');
-    } else {
-      localStorage.setItem('theme', 'light');
-    }
-  });
-</script>
+<!-- Ton script personnalisé -->
+<script src="scripts.js"></script>
+
 </body>
 </html>

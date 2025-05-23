@@ -1,9 +1,37 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+
+<style>html { visibility: hidden; }</style>
+<script>
+  (function() {
+    const theme = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const useDark = theme === 'dark' || (!theme && prefersDark);
+    if (useDark) {
+      document.documentElement.classList.add('dark-mode');
+    }
+    document.documentElement.style.visibility = 'visible';
+  })();
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script>
+  window.addEventListener('DOMContentLoaded', () => {
+    document.body.classList.add('loaded');
+  });
+</script>
+
+
+
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Chelsy - Expériences & Formations</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
@@ -20,11 +48,15 @@
       <li><a href="contact.html">Contact</a></li>
     </ul>
     <!-- Bouton Dark/Light Mode -->
-    <button id="theme-toggle" aria-label="Changer de thème">🌓</button>
+    <div id="theme-toggle" class="theme-toggle">
+      <p id="toggle-text">Turn on dark mode</p>
+        <svg id="theme-icon" class="theme-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"></svg>
+    </div>
   </nav>
 </header>
 
-<main class="main-container">
+<main id="swup" class="main-container transition-fade">
+
   <section>
     <h1>Expériences Professionnelles</h1>
     <article>
@@ -69,25 +101,12 @@
   <p>© 2025 Chelsy — En route vers l'emploi</p>
 </footer>
 
-<script>
-    const toggleButton = document.getElementById('theme-toggle');
-    const body = document.body;
-  
-    // Appliquer le thème sauvegardé
-    if (localStorage.getItem('theme') === 'dark') {
-      body.classList.add('dark-mode');
-    }
-  
-    toggleButton.addEventListener('click', () => {
-      body.classList.toggle('dark-mode');
-  
-      // Sauvegarder la préférence
-      if (body.classList.contains('dark-mode')) {
-        localStorage.setItem('theme', 'dark');
-      } else {
-        localStorage.setItem('theme', 'light');
-      }
-    });
-  </script>
+<!-- Librairie tsParticles (à charger AVANT ton script) -->
+<script src="https://cdn.jsdelivr.net/npm/tsparticles@2.11.1/tsparticles.bundle.min.js"></script>
+
+<!-- Ton script personnalisé -->
+<script src="scripts.js"></script>
+<script src="https://unpkg.com/swup@4"></script>
+
 </body>
 </html>
