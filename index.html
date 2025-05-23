@@ -1,52 +1,49 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Chelsy - Ingénieure Réseaux & Cybersécurité</title>
+  <meta name="description" content="Bienvenue sur le portfolio de Chelsy Wirleine, ingénieure réseaux, systèmes et cybersécurité passionnée par la sécurisation et la modernisation des infrastructures IT.">
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://wirleine.github.io/Chelsy-website/" />
+  <meta name="author" content="Chelsy Wirleine MENTOU TAKONG" />
+  <meta name="keywords" content="cybersécurité, ingénieure réseaux, systèmes, IT, sécurité informatique, Chelsy, MENTOU TAKONG, portfolio, projets IT" />
 
-<script>
-  (function () {
-    const theme = localStorage.getItem("theme");
-    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    const useDark = theme === "dark" || (!theme && prefersDark);
+  <!-- Préchargement et styles -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
-    if (useDark) {
-      document.documentElement.classList.add("dark-mode");
+  <!-- Thème sombre -->
+  <style>
+    html:not(.theme-loaded) {
+      background: #0f1117;
+      color: white;
     }
+  </style>
+  <script>
+    (function () {
+      const theme = localStorage.getItem("theme");
+      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      const useDark = theme === "dark" || (!theme && prefersDark);
+      if (useDark) {
+        document.documentElement.classList.add("dark-mode");
+      }
+      document.documentElement.classList.add("theme-loaded");
+    })();
+  </script>
 
-    // Pas de visibility: hidden → on évite les flashs
-    document.documentElement.classList.add("theme-loaded");
-  })();
-</script>
-
-<style>
-  html:not(.theme-loaded) {
-    background: #0f1117; /* couleur sombre pour éviter flash blanc si dark */
-    color: white;
-  }
-</style>
-
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-<script>
-  window.addEventListener('DOMContentLoaded', () => {
-    document.body.classList.add('loaded');
-  });
-</script>
-
-
-
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Chelsy - Ingénieure Réseaux & Cybersécurité</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      document.body.classList.add('loaded');
+    });
+  </script>
 </head>
 
 <body>
-
 <div id="tsparticles"></div>
 
 <header>
