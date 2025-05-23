@@ -1,38 +1,45 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-
-  <style>
-  html { visibility: hidden; }
-</style>
-<script>
-  (function() {
-    const theme = localStorage.getItem('theme');
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const useDark = theme === 'dark' || (!theme && prefersDark);
-    if (useDark) {
-      document.documentElement.classList.add('dark-mode');
-    }
-    document.documentElement.style.visibility = 'visible';
-  })();
-</script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-<script>
-  window.addEventListener('DOMContentLoaded', () => {
-    document.body.classList.add('loaded');
-  });
-</script>
-
-
   <meta charset="UTF-8">
-  <title>Merci !</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Merci pour votre message - Chelsy Wirleine</title>
+  <meta name="description" content="Merci d'avoir contacté Chelsy Wirleine. Votre message a bien été reçu. Une réponse vous sera apportée dans les plus brefs délais.">
+  <meta name="robots" content="noindex, follow">
+  <meta name="author" content="Chelsy Wirleine MENTOU TAKONG">
 
+  <!-- Polices -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
   <link rel="stylesheet" href="style.css">
+
+  <!-- Anti flash blanc -->
+  <style>
+    html { visibility: hidden; }
+  </style>
+  <script>
+    (function() {
+      const theme = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const useDark = theme === 'dark' || (!theme && prefersDark);
+      if (useDark) {
+        document.documentElement.classList.add('dark-mode');
+      }
+      document.documentElement.style.visibility = 'visible';
+    })();
+  </script>
+
+  <!-- Chargement -->
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      document.body.classList.add('loaded');
+    });
+  </script>
 </head>
+
   
 <body class="main-container">
   <h1>Merci pour votre message !</h1>
