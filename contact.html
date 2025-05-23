@@ -1,42 +1,54 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-
-<style>
-  html { visibility: hidden; }
-</style>
-<script>
-  (function() {
-    const theme = localStorage.getItem('theme');
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const useDark = theme === 'dark' || (!theme && prefersDark);
-    if (useDark) {
-      document.documentElement.classList.add('dark-mode');
-    }
-    document.documentElement.style.visibility = 'visible';
-  })();
-</script>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-<script>
-  window.addEventListener('DOMContentLoaded', () => {
-    document.body.classList.add('loaded');
-  });
-</script>
-
-
-
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Chelsy - Contact</title>
+  <title>Contactez Chelsy Wirleine - Ingénieure Réseaux & Cybersécurité</title>
+  <meta name="description" content="Prenez contact avec Chelsy Wirleine pour toute collaboration en cybersécurité, administration réseau, projets IT ou opportunité professionnelle." />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="Chelsy Wirleine MENTOU TAKONG" />
+  <meta name="keywords" content="contact Chelsy, ingénieure cybersécurité, email, LinkedIn, projets IT, réseau, collaboration" />
+  <link rel="canonical" href="https://wirleine.github.io/Chelsy-website/contact.html" />
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Préchargement des polices -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+
+  <!-- Feuilles de style -->
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Anti flash blanc -->
+  <style>
+    html { visibility: hidden; }
+    html:not(.theme-loaded) {
+      background: #0f1117;
+      color: white;
+    }
+  </style>
+
+  <!-- Thème clair/sombre -->
+  <script>
+    (function() {
+      const theme = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const useDark = theme === 'dark' || (!theme && prefersDark);
+      if (useDark) {
+        document.documentElement.classList.add('dark-mode');
+      }
+      document.documentElement.style.visibility = 'visible';
+    })();
+  </script>
+
+  <!-- Chargement visuel -->
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      document.body.classList.add('loaded');
+    });
+  </script>
 </head>
+
 
 <body>
   <header>
