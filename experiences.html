@@ -1,40 +1,54 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Chelsy - Expériences & Formations</title>
+  <meta name="description" content="Découvrez les expériences professionnelles et le parcours académique de Chelsy Wirleine, ingénieure en réseaux et cybersécurité, avec un focus sur la supervision réseau, l’administration systèmes et la sécurité informatique." />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="Chelsy Wirleine MENTOU TAKONG" />
+  <meta name="keywords" content="Expérience professionnelle, cybersécurité, ingénieure réseaux, formations IT, SFR, supervision réseau, Grafana, administration système, F2I, INSA, IAI, Nagios, Kibana" />
+  <link rel="canonical" href="https://wirleine.github.io/Chelsy-website/experiences.html" />
 
-<style>html { visibility: hidden; }</style>
-<script>
-  (function() {
-    const theme = localStorage.getItem('theme');
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const useDark = theme === 'dark' || (!theme && prefersDark);
-    if (useDark) {
-      document.documentElement.classList.add('dark-mode');
+  <!-- Préchargement des polices -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+
+  <!-- Feuilles de style -->
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Anti flash blanc -->
+  <style>html { visibility: hidden; }</style>
+  <style>
+    html:not(.theme-loaded) {
+      background: #0f1117;
+      color: white;
     }
-    document.documentElement.style.visibility = 'visible';
-  })();
-</script>
+  </style>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-<script>
-  window.addEventListener('DOMContentLoaded', () => {
-    document.body.classList.add('loaded');
-  });
-</script>
+  <!-- Gestion du thème -->
+  <script>
+    (function() {
+      const theme = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const useDark = theme === 'dark' || (!theme && prefersDark);
+      if (useDark) {
+        document.documentElement.classList.add('dark-mode');
+      }
+      document.documentElement.style.visibility = 'visible';
+    })();
+  </script>
 
-
-
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Chelsy - Expériences & Formations</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <!-- Animation de chargement -->
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      document.body.classList.add('loaded');
+    });
+  </script>
 </head>
+
 
 <body>
 <header>
