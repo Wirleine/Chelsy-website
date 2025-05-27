@@ -4,7 +4,7 @@ function updateToggleUI() {
   const isDark = document.body.classList.contains('dark-mode');
 
   if (toggleText) {
-    toggleText.textContent = isDark ? 'Turn on light mode' : 'Turn on dark mode';
+    toggleText.textContent = isDark ? 'Mode clair' : 'Mode sombre';
   }
 
   if (themeIcon) {
