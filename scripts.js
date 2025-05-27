@@ -4,7 +4,7 @@ function updateToggleUI() {
   const isDark = document.body.classList.contains('dark-mode');
 
   if (toggleText) {
-    toggleText.textContent = isDark ? 'Mode clair' : 'Mode sombre';
+    toggleText.textContent = isDark ? 'Turn on light mode' : 'Turn on dark mode';
   }
 
   if (themeIcon) {
@@ -74,6 +74,20 @@ function initThemeToggle() {
   updateToggleUI();
 }
 
+function updateActiveLink() {
+  const currentUrl = window.location.pathname.split('/').pop() || 'index.html';
+
+  document.querySelectorAll('nav a').forEach(link => {
+    const linkUrl = link.getAttribute('href');
+
+    if (linkUrl === currentUrl || (currentUrl === 'index.html' && linkUrl === './')) {
+      link.classList.add('active');
+    } else {
+      link.classList.remove('active');
+    }
+  });
+}
+
 function init() {
   const savedTheme = localStorage.getItem('theme');
   if (savedTheme === 'dark') {
@@ -82,6 +96,7 @@ function init() {
 
   initThemeToggle();
   loadParticles();
+  updateActiveLink();
 }
 
 document.addEventListener('DOMContentLoaded', () => {
